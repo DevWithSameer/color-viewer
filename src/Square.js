@@ -2,22 +2,29 @@ import React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 
-const Square = ({ colorValue }) => {
+const Square = ({ colorValue, hexValue, isDarkText }) => {
   return (
     <section>
       <Box
+      mt={"10px"}
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
         sx={{
-          width: 300,
-          height: 300,
+          width: 250,
+          height: 250,
           backgroundColor: colorValue,
-          border: "1px dashed grey",
+          color: isDarkText ? "#000" : "#FFF",
+          border: "2px solid grey",
         }}
       >
-        <Typography variant="h5" component="div">
+        <Typography variant="p">
           {colorValue ? colorValue : "Empty Value"}
         </Typography>
+        <Typography variant="p">
+          {hexValue ? hexValue : null}
+        </Typography>
       </Box>
-      <p>{colorValue ? colorValue : "Empty Value"}</p>
     </section>
   );
 };
